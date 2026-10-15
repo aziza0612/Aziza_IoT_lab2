@@ -1,18 +1,16 @@
+#include <Arduino.h>
 
+const int LIGHT = 33;
 
-
-#include "Arduino.h"
-
-
-/****************************************************/
-void setup(void) 
-{
-
+void setup() {
+  Serial.begin(115200);
 }
 
+void loop() {
+  int reading = analogRead(LIGHT);
 
-/****************************************************/
-void loop(void) 
-{
-    
+  Serial.print("LIGHT=");
+  Serial.println(reading);
+
+  delay(300);
 }
